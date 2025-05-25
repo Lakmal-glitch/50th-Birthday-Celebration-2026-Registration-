@@ -111,32 +111,11 @@
         <option value="No">No</option>
       </select>
 
-      <label>Your Year of Birth:</label>
-      <input type="text" id="birthYear" required />
-
       <label>City and Country you currently live in:</label>
       <input type="text" id="location" />
 
-      <label>Dietary Requirements or Allergies:</label>
-      <input type="text" id="dietary" />
-
-      <label>Any other notes or questions for the organisers?</label>
+      <label>Any other notes or questions for the organisers? Change to Any other notes or  Dietary Requirements or Allergies?</label>
       <textarea id="notes" rows="3"></textarea>
-
-      <label>Would you like to help with the event planning or coordination?</label>
-      <select id="volunteer">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-
-      <label>How did you hear about the event?</label>
-      <select id="referral">
-        <option value="WhatsApp">WhatsApp</option>
-        <option value="Facebook">Facebook</option>
-        <option value="Email">Email</option>
-        <option value="Friend">Friend</option>
-        <option value="Other">Other</option>
-      </select>
 
       <button type="submit">Submit</button>
     </form>
@@ -175,9 +154,7 @@
         email: form.email.value,
         school: form.school.value,
         partner: form.partner.value,
-        birthYear: form.birthYear.value,
         location: form.location.value,
-        dietary: form.dietary.value,
         notes: form.notes.value,
         volunteer: form.volunteer.value,
         referral: form.referral.value,
