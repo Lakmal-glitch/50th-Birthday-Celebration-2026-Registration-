@@ -105,14 +105,27 @@
       <label>School Attended in Sri Lanka:</label>
       <input type="text" id="school" required />
 
-      <label>Will you be attending with a partner? (please select Yes or No) </label>
-      <select id="partner">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
+      <label>Will you be attending with a partner? (Expression of interest)</label>
+<select id="partner">
+  <option value="No" selected>No</option>
+  <option value="Yes">Yes</option>
+</select>
 
       <label>City and Country you currently live in:</label>
       <input type="text" id="location" />
+
+      <label>State currently living in If:</label>
+<select id="location">
+  <option value="" disabled selected>Select your state or territory</option>
+  <option value="New South Wales (NSW)">New South Wales (NSW)</option>
+  <option value="Victoria (VIC)">Victoria (VIC)</option>
+  <option value="Queensland (QLD)">Queensland (QLD)</option>
+  <option value="South Australia (SA)">South Australia (SA)</option>
+  <option value="Western Australia (WA)">Western Australia (WA)</option>
+  <option value="Tasmania (TAS)">Tasmania (TAS)</option>
+  <option value="Northern Territory (NT)">Northern Territory (NT)</option>
+  <option value="Australian Capital Territory (ACT)">Australian Capital Territory (ACT)</option>
+</select>
 
       <label>Any other notes or questions for the organisers? Change to Any other notes or  Dietary Requirements or Allergies?</label>
       <textarea id="notes" rows="3"></textarea>
