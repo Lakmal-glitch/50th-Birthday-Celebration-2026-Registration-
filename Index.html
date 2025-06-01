@@ -106,30 +106,28 @@
       <input type="text" id="school" required />
 
       <label>Will you be attending with a partner? (Expression of interest)</label>
-      <select id="partner">
-        <option value="No" selected>No</option>
-        <option value="Yes">Yes</option>
-      </select>
+<select id="partner">
+  <option value="No" selected>No</option>
+  <option value="Yes">Yes</option>
+</select>
 
-      <label>Country you currently live in:</label>
-      <input type="text" id="country" oninput="toggleStateDropdown()" />
+      <label>City and Country you currently live in:</label>
+      <input type="text" id="location" />
 
-      <div id="stateContainer" style="display:none;">
-        <label>State currently living in:</label>
-        <select id="state">
-          <option value="" disabled selected>Select your state or territory</option>
-          <option value="New South Wales (NSW)">New South Wales (NSW)</option>
-          <option value="Victoria (VIC)">Victoria (VIC)</option>
-          <option value="Queensland (QLD)">Queensland (QLD)</option>
-          <option value="South Australia (SA)">South Australia (SA)</option>
-          <option value="Western Australia (WA)">Western Australia (WA)</option>
-          <option value="Tasmania (TAS)">Tasmania (TAS)</option>
-          <option value="Northern Territory (NT)">Northern Territory (NT)</option>
-          <option value="Australian Capital Territory (ACT)">Australian Capital Territory (ACT)</option>
-        </select>
-      </div>
+      <label>State currently living in If:</label>
+<select id="location">
+  <option value="" disabled selected>Select your state or territory</option>
+  <option value="New South Wales (NSW)">New South Wales (NSW)</option>
+  <option value="Victoria (VIC)">Victoria (VIC)</option>
+  <option value="Queensland (QLD)">Queensland (QLD)</option>
+  <option value="South Australia (SA)">South Australia (SA)</option>
+  <option value="Western Australia (WA)">Western Australia (WA)</option>
+  <option value="Tasmania (TAS)">Tasmania (TAS)</option>
+  <option value="Northern Territory (NT)">Northern Territory (NT)</option>
+  <option value="Australian Capital Territory (ACT)">Australian Capital Territory (ACT)</option>
+</select>
 
-      <label>Any other notes or Dietary Requirements or Allergies?</label>
+      <label>Any other notes or questions for the organisers? Change to Any other notes or  Dietary Requirements or Allergies?</label>
       <textarea id="notes" rows="3"></textarea>
 
       <button type="submit">Submit</button>
@@ -169,8 +167,7 @@
         email: form.email.value,
         school: form.school.value,
         partner: form.partner.value,
-        country: form.country.value,
-        state: document.getElementById("state")?.value || "",
+        location: form.location.value,
         notes: form.notes.value,
         timestamp: new Date().toISOString()
       };
@@ -179,7 +176,7 @@
         .then(() => {
           form.style.display = "none";
           document.getElementById("thankYouBox").style.display = "block";
-          updateCount();
+          updateCount(); // Refresh count
         });
     });
 
@@ -191,21 +188,10 @@
       });
     }
 
-    function toggleStateDropdown() {
-      const countryInput = document.getElementById("country").value.trim().toLowerCase();
-      const stateContainer = document.getElementById("stateContainer");
-
-      if (countryInput === "australia") {
-        stateContainer.style.display = "block";
-      } else {
-        stateContainer.style.display = "none";
-        document.getElementById("state").value = ""; // clear selection
-      }
-    }
-
     updateCount();
   </script>
 
 </body>
 </html>
+
 
